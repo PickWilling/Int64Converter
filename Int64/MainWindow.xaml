@@ -5,23 +5,23 @@
         Title="Int64" Height="120px" Width="475px" Padding="2">
     <Grid Height="Auto" Width="Auto" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions >
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Width="Auto">
-            <Label Content="int64:" />
-            <TextBox x:Name="EmsId" MinWidth="160px"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
+            <Label Content="Int64:" />
+            <TextBox x:Name="Int64" MinWidth="160px"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="H32:" />
-            <TextBox x:Name="H32" MinWidth="80px"/>
+            <TextBox x:Name="H32" MinWidth="80px" Text="{Binding Path=Text, ElementName=Int64, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="L32:" />
