@@ -1,8 +1,49 @@
-﻿<Window x:Class="Int64.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Int64.MainWindow"
+        Title="Int64" Height="120px" Width="475px" Padding="2">
+    <Grid Height="Auto" Width="Auto" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Width="Auto">
+            <Label Content="int64:" />
+            <TextBox x:Name="EmsId" MinWidth="160px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
+            <Label Content="H32:" />
+            <TextBox x:Name="H32" MinWidth="80px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
+            <Label Content="L32:" />
+            <TextBox x:Name="L32" MinWidth="80px"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Width="Auto">
+            <Label Content="HH8:" />
+            <TextBox x:Name="HH8" MinWidth="80px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Width="Auto">
+            <Label Content="HL8:" />
+            <TextBox x:Name="HL8" MinWidth="80px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Width="Auto">
+            <Label Content="LH8:" />
+            <TextBox x:Name="LH8" MinWidth="80px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Width="Auto">
+            <Label Content="LL8:" />
+            <TextBox x:Name="LL8" MinWidth="80px"/>
+        </StackPanel>
+
     </Grid>
 </Window>
