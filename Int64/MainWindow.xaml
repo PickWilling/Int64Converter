@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Int64Converter.MainWindow"
         xmlns:local="clr-namespace:Int64Converter"    
-        Title="Int64" Height="120px" Width="475px" Padding="2">
+        Title="Int64" Height="110.667" Width="475px" Padding="5">
     <Window.Resources>
         <local:CInt64ToH32Converter x:Key="Int64ToH32Converter"/>
         <local:CInt64To32MultiConverter x:Key="Int64MultiConverter"/>
@@ -31,8 +31,8 @@
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
             <Label Content="Int64:" />
-            <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="CheckPasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="CheckPreviewTextInput" HorizontalAlignment="Stretch">
+            <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="Check64Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check64PreviewTextInput" >
                 <TextBox.Text>
                     <MultiBinding Converter="{StaticResource Int64MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
                         <Binding Path="Text" ElementName="H32"/>
@@ -43,13 +43,15 @@
         </DockPanel>
         <DockPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="H32:" />
-            <TextBox x:Name="H32" MinWidth="80px">
+            <TextBox x:Name="H32" MinWidth="80px" DataObject.Pasting="Check32Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check32PreviewTextInput" >
                 
             </TextBox>
         </DockPanel>
         <DockPanel  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="L32:" />
-            <TextBox x:Name="L32" MinWidth="80px">
+            <TextBox x:Name="L32" MinWidth="80px" DataObject.Pasting="Check32Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check32PreviewTextInput">
                 <TextBox.Text>
                     <MultiBinding Converter="{StaticResource Int32MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
                         <Binding Path="Text" ElementName="HH8"/>
@@ -63,19 +65,23 @@
 
         <DockPanel Grid.Row="2" Grid.Column="0" Width="Auto">
             <Label Content="HH8:" />
-            <TextBox x:Name="HH8" MinWidth="80px"/>
+            <TextBox x:Name="HH8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check8PreviewTextInput"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="1" Width="Auto">
             <Label Content="HL8:" />
-            <TextBox x:Name="HL8" MinWidth="80px"/>
+            <TextBox x:Name="HL8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check8PreviewTextInput"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="2" Width="Auto">
             <Label Content="LH8:" />
-            <TextBox x:Name="LH8" MinWidth="80px" />
+            <TextBox x:Name="LH8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check8PreviewTextInput"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="3" Width="Auto">
             <Label Content="LL8:" />
-            <TextBox x:Name="LL8" MinWidth="80px"/>
+            <TextBox x:Name="LL8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check8PreviewTextInput"/>
         </DockPanel>
 
     </Grid>
