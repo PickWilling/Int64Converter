@@ -20,12 +20,22 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
-            <Label Content="Int64:" />
-            <TextBox x:Name="Int64Text" MinWidth="160px" />
+            <Label Content="Int64:" Height="25.24" VerticalAlignment="Top" />
+            <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="CheckPasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="CheckPreviewTextInput" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="H32:" />
-            <TextBox x:Name="H32" MinWidth="80px" Text="{Binding Path=Text, ElementName=Int64Text, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource Int64ToH32Converter}}"/>
+            <TextBox x:Name="H32" MinWidth="80px">
+                <TextBox.Text>
+                    <Binding Path="Text" ElementName="Int64Text" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource Int64ToH32Converter}">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                   
+                </TextBox.Text>
+            </TextBox> 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="L32:" />
