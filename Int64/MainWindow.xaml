@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Int64Converter.MainWindow"
         xmlns:local="clr-namespace:Int64Converter"    
-        Title="Int64" Height="110.667" Width="475px" Padding="5">
+        Title="Int64" Height="112" Width="477" Padding="5">
     <Window.Resources>
         <local:CInt64ToH32Converter x:Key="Int64ToH32Converter"/>
         <local:CInt64To32MultiConverter x:Key="Int64MultiConverter"/>
@@ -17,7 +17,8 @@
         </Style>-->
             
     </Window.Resources>
-    <Grid Height="Auto" Width="Auto" >
+    <Viewbox Stretch="Fill">
+        <Grid Height="Auto" Width="Auto" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -25,23 +26,29 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions >
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
-            <Label Content="Int64:" />
-            <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="Check64Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check64PreviewTextInput" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent" >
-                <TextBox.Text>
-                    <MultiBinding Converter="{StaticResource Int64MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
-                        <Binding Path="Text" ElementName="H32"/>
-                        <Binding Path="Text" ElementName="L32"/>
-                    </MultiBinding>
-                </TextBox.Text>
-            </TextBox>
+            
+                <Label Content="Int64:" />
+            
+         
+                <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="Check64Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
+                   PreviewTextInput="Check64PreviewTextInput" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent" 
+                         >
+                    <TextBox.Text>
+                        <MultiBinding Converter="{StaticResource Int64MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
+                            <Binding Path="Text" ElementName="H32"/>
+                            <Binding Path="Text" ElementName="L32"/>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+   
+            
         </DockPanel>
-        <DockPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
+        <DockPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" VerticalAlignment="Stretch" >
             <Label Content="H32:" />
             <TextBox x:Name="H32" MinWidth="80px" DataObject.Pasting="Check32Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
                    PreviewTextInput="Check32PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent">
@@ -85,4 +92,6 @@
         </DockPanel>
 
     </Grid>
+        
+    </Viewbox >
 </Window>
