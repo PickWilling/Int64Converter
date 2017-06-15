@@ -164,6 +164,19 @@ namespace Int64Converter
             TextBox stTextBox = sender as TextBox;
             stTextBox.SelectAll();
         }
+
+        private void ResizeEvent(object sender, SizeChangedEventArgs e)
+        {
+            // Height="120" Width="540"
+            if (e.WidthChanged)
+            {
+                this.Height = (120.0 / 540.0) * this.Width; 
+            }
+            else if (e.HeightChanged)
+            {
+                this.Width = (540.0 / 120.0 )* this.Height;
+            }
+        }
     }
         
 }
