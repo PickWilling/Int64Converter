@@ -31,11 +31,8 @@
                     <Binding Path="Text" ElementName="Int64Text" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource Int64ToH32Converter}" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
                         <Binding.ValidationRules>
 
-
-                            <DataErrorValidationRule ValidatesOnTargetUpdated="True"/>
-                            <ExceptionValidationRule ValidatesOnTargetUpdated="True"/>
-
-
+                            <local:NumCheckRule Min="0" Max="1000000" ValidatesOnTargetUpdated="True" />
+                                
                         </Binding.ValidationRules>
                     </Binding>
                    
