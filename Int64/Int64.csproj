@@ -54,6 +54,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CInt32To8MultiConverter.cs" />
+    <Compile Include="CInt64MultiConverter.cs" />
     <Compile Include="CInt64ToH32Converter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

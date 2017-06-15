@@ -6,6 +6,16 @@
         Title="Int64" Height="120px" Width="475px" Padding="2">
     <Window.Resources>
         <local:CInt64ToH32Converter x:Key="Int64ToH32Converter"/>
+        <local:CInt64To32MultiConverter x:Key="Int64MultiConverter"/>
+        <local:CInt32To8MultiConverter x:Key="Int32MultiConverter"/>
+        <!--<Style x:Key="TextBoxStyle32" TargetType="{x:Type Control}">
+            <Setter Property="DataObject.Pasting" Value="CheckPasting"/>
+            <Setter Property="PreviewKeyDown" Value="CheckPreviewKeyDown"/>
+            <Setter Property="InputMethod.IsInputMethodEnabled" Value="False"/>
+            <Setter Property="PreviewTextInput" Value="CheckPreviewTextInput"/>
+            <Setter Property="Text" Value="0"/>
+        </Style>-->
+            
     </Window.Resources>
     <Grid Height="Auto" Width="Auto" >
         <Grid.ColumnDefinitions>
@@ -19,47 +29,54 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
-            <Label Content="Int64:" Height="25.24" VerticalAlignment="Top" />
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
+            <Label Content="Int64:" />
             <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="CheckPasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="CheckPreviewTextInput" Text="0"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
+                   PreviewTextInput="CheckPreviewTextInput" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <MultiBinding Converter="{StaticResource Int64MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
+                        <Binding Path="Text" ElementName="H32"/>
+                        <Binding Path="Text" ElementName="L32"/>
+                    </MultiBinding>
+                </TextBox.Text>
+            </TextBox>
+        </DockPanel>
+        <DockPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="H32:" />
             <TextBox x:Name="H32" MinWidth="80px">
-                <TextBox.Text>
-                    <Binding Path="Text" ElementName="Int64Text" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource Int64ToH32Converter}" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
-                        <Binding.ValidationRules>
-
-                            <local:NumCheckRule Min="0" Max="1000000" ValidatesOnTargetUpdated="True" />
-                                
-                        </Binding.ValidationRules>
-                    </Binding>
-                   
-                </TextBox.Text>
-            </TextBox> 
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
+                
+            </TextBox>
+        </DockPanel>
+        <DockPanel  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="L32:" />
-            <TextBox x:Name="L32" MinWidth="80px"/>
-        </StackPanel>
+            <TextBox x:Name="L32" MinWidth="80px">
+                <TextBox.Text>
+                    <MultiBinding Converter="{StaticResource Int32MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
+                        <Binding Path="Text" ElementName="HH8"/>
+                        <Binding Path="Text" ElementName="HL8"/>
+                        <Binding Path="Text" ElementName="LH8"/>
+                        <Binding Path="Text" ElementName="LL8"/>
+                    </MultiBinding>
+                </TextBox.Text>
+            </TextBox>
+        </DockPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Width="Auto">
+        <DockPanel Grid.Row="2" Grid.Column="0" Width="Auto">
             <Label Content="HH8:" />
             <TextBox x:Name="HH8" MinWidth="80px"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Width="Auto">
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="1" Width="Auto">
             <Label Content="HL8:" />
             <TextBox x:Name="HL8" MinWidth="80px"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Width="Auto">
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="2" Width="Auto">
             <Label Content="LH8:" />
-            <TextBox x:Name="LH8" MinWidth="80px"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Width="Auto">
+            <TextBox x:Name="LH8" MinWidth="80px" />
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="3" Width="Auto">
             <Label Content="LL8:" />
             <TextBox x:Name="LL8" MinWidth="80px"/>
-        </StackPanel>
+        </DockPanel>
 
     </Grid>
 </Window>
