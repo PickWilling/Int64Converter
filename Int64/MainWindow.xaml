@@ -32,7 +32,7 @@
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" >
             <Label Content="Int64:" />
             <TextBox x:Name="Int64Text" MinWidth="160px" DataObject.Pasting="Check64Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check64PreviewTextInput" >
+                   PreviewTextInput="Check64PreviewTextInput" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent" >
                 <TextBox.Text>
                     <MultiBinding Converter="{StaticResource Int64MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
                         <Binding Path="Text" ElementName="H32"/>
@@ -44,14 +44,14 @@
         <DockPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="H32:" />
             <TextBox x:Name="H32" MinWidth="80px" DataObject.Pasting="Check32Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check32PreviewTextInput" >
+                   PreviewTextInput="Check32PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent">
                 
             </TextBox>
         </DockPanel>
         <DockPanel  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="Auto">
             <Label Content="L32:" />
             <TextBox x:Name="L32" MinWidth="80px" DataObject.Pasting="Check32Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check32PreviewTextInput">
+                   PreviewTextInput="Check32PreviewTextInput" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent">
                 <TextBox.Text>
                     <MultiBinding Converter="{StaticResource Int32MultiConverter}" UpdateSourceTrigger="PropertyChanged" >
                         <Binding Path="Text" ElementName="HH8"/>
@@ -66,22 +66,22 @@
         <DockPanel Grid.Row="2" Grid.Column="0" Width="Auto">
             <Label Content="HH8:" />
             <TextBox x:Name="HH8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check8PreviewTextInput"/>
+                   PreviewTextInput="Check8PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="1" Width="Auto">
             <Label Content="HL8:" />
             <TextBox x:Name="HL8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check8PreviewTextInput"/>
+                   PreviewTextInput="Check8PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="2" Width="Auto">
             <Label Content="LH8:" />
             <TextBox x:Name="LH8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check8PreviewTextInput"/>
+                   PreviewTextInput="Check8PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent"/>
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.Column="3" Width="Auto">
             <Label Content="LL8:" />
             <TextBox x:Name="LL8" MinWidth="80px" DataObject.Pasting="Check8Pasting" PreviewKeyDown="CheckPreviewKeyDown" InputMethod.IsInputMethodEnabled="False"
-                   PreviewTextInput="Check8PreviewTextInput"/>
+                   PreviewTextInput="Check8PreviewTextInput" Text="0" GotFocus="TextGotFocusEvent" GotKeyboardFocus="TextGotKeyBoardFocusEvent" GotMouseCapture="TextGotMouseCaptureEvent"/>
         </DockPanel>
 
     </Grid>

@@ -146,6 +146,24 @@ namespace Int64Converter
             }
             return true;
         }
+
+        private void TextGotFocusEvent(object sender, RoutedEventArgs e)
+        {
+            TextBox stTextBox = sender as TextBox;
+            stTextBox.SelectAll();
+        }
+
+        private void TextGotKeyBoardFocusEvent(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            TextBox stTextBox = sender as TextBox;
+            stTextBox.SelectAll();
+        }
+
+        private void TextGotMouseCaptureEvent(object sender, MouseEventArgs e)
+        {
+            TextBox stTextBox = sender as TextBox;
+            stTextBox.SelectAll();
+        }
     }
         
 }
