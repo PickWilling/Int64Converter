@@ -7,7 +7,7 @@
     <ProjectGuid>{060AFDF6-D9DC-4C4B-BE74-BA1762C88F53}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Int64</RootNamespace>
+    <RootNamespace>Int64Converter</RootNamespace>
     <AssemblyName>Int64</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

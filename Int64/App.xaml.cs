@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Windows;
 
-namespace Int64
+namespace Int64Converter
 {
     /// <summary>
     /// App.xaml 的交互逻辑

@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Int64
+namespace Int64Converter
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
