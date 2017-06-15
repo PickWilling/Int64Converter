@@ -69,7 +69,7 @@ namespace Int64Converter
         private void Check64PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextBox stTextBox = sender as TextBox;
-            if ((!isNumberic(e.Text) || !IsInt64Num(stTextBox.Text)) && (stTextBox.SelectedText.Length == 0))
+            if ((!isNumberic(e.Text) || !IsInt64Num(stTextBox.Text + e.Text)) && (stTextBox.SelectedText.Length == 0))
             {
                 e.Handled = true;
             }
@@ -79,7 +79,7 @@ namespace Int64Converter
         private void Check32PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextBox stTextBox = sender as TextBox;
-            if ((!isNumberic(e.Text) || !IsInt32Num(stTextBox.Text)) && (stTextBox.SelectedText.Length == 0))
+            if ((!isNumberic(e.Text) || !IsInt32Num(stTextBox.Text + e.Text)) && (stTextBox.SelectedText.Length == 0))
             {
                 e.Handled = true;
             }
@@ -89,7 +89,7 @@ namespace Int64Converter
         private void Check8PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextBox stTextBox = sender as TextBox;
-            if ((!isNumberic(e.Text) || !IsInt8Num(stTextBox.Text)) && (stTextBox.SelectedText.Length == 0))
+            if ((!isNumberic(e.Text) || !IsInt8Num(stTextBox.Text + e.Text)) && (stTextBox.SelectedText.Length == 0))
             {
                 e.Handled = true;
             }
