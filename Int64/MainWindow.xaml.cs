@@ -170,12 +170,22 @@ namespace Int64Converter
             // Height="120" Width="540"
             if (e.WidthChanged)
             {
-                this.Height = (120.0 / 540.0) * this.Width; 
+                this.Height = (120.0 / 540.0) * e.NewSize.Width; 
             }
             else if (e.HeightChanged)
             {
-                this.Width = (540.0 / 120.0 )* this.Height;
+                this.Width = (540.0 / 120.0) * e.NewSize.Height;
             }
+
+            // 无效
+            //if (e.NewSize.Width >= SystemParameters.MaximizedPrimaryScreenWidth)
+            //{
+            //    this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
+            //    this.Height = (120.0 / 540.0) * this.Width;
+            //    e.Handled = true;
+            //}
+            
+            
         }
     }
         
