@@ -21,8 +21,14 @@ namespace Int64Converter
         public MainWindow()
         {
             InitializeComponent();
-        }
 
+            // 最大值\最小值
+            this.MinHeight = dMinHeight;
+            this.MinWidth = dMinWidth;
+            this.MaxHeight = (dMinHeight / dMinWidth) * this.MaxWidth;
+        }
+        private const double dMinWidth = 540;
+        private const double dMinHeight = 120;
         //检测粘贴
         private void Check64Pasting(object sender, DataObjectPastingEventArgs e)
         {
